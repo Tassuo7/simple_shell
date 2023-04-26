@@ -6,7 +6,7 @@
 */
 int _putchar(char character)
 {
-	return (write(1, &character, 1));
+        return (write(1, &character, 1));
 }
 /**
  * _puts - is a function print a string
@@ -15,11 +15,11 @@ int _putchar(char character)
  */
 void _puts(char *str)
 {
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str++;
-	}
+        while (*str != '\0')
+        {
+                _putchar(*str);
+                str++;
+        }
 }
 /**
  * _strcmp - A function compare two string
@@ -29,14 +29,14 @@ void _puts(char *str)
  */
 int _strcmp(char *value1, char *value2)
 {
-	int i;
+        int i;
 
-	for (i = 0; value1[i] != '\0' && value2[i] != '\0'; i++)
-	{
-		if (value1[i] != value2[i])
-			return ((int)value1[i] - value2[i]);
-	}
-	return (0);
+        for (i = 0; value1[i] != '\0' && value2[i] != '\0'; i++)
+        {
+                if (value1[i] != value2[i])
+                        return ((int)value1[i] - value2[i]);
+        }
+        return (0);
 }
 /**
  * get_env - A function that prints the current environment
@@ -45,12 +45,24 @@ int _strcmp(char *value1, char *value2)
  */
 int get_env(char **env)
 {
-	char **e = env;
+        char **e = env;
 
-	for (e = env; *e != NULL; e++)
-	{
-		_puts(*e);
-		_putchar('\n');
-	}
-	return (0);
+        for (e = env; *e != NULL; e++)
+        {
+                _puts(*e);
+                _putchar('\n');
+        }
+        return (0);
+}
+/**
+ * _strlen -  a function that returns the length of a string
+ * @s: An input string
+ * Return: Nothing
+ */
+int _strlen(char *s)
+{
+        int p;
+
+        p = strlen(s);
+        return (p);
 }
