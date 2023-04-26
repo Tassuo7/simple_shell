@@ -24,7 +24,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			exit(0);
 		}
 		if(buffer[byte_read-1] == '\n')
-			buffer[buffer_read-1] = '\0';
+			buffer[byte_read-1] = '\0';
 
 		if (_strcmp(av[0], "exit") == 0)
 			exit_shell();
