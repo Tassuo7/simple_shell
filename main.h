@@ -14,4 +14,5 @@ void execute_command(char **argv);
 void exit_shell(void);
 int _strcmp(char *value1, char *value2);
 int get_env(char **env);
+void shell_prompt(char **ar, char **ev);
 #endif
