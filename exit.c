@@ -5,5 +5,5 @@
  */
 void exit_shell()
 {
-	exit(0);
+	_exit(0);
 }
