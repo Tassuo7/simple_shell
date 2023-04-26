@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * shell_prompt - A function display prompt and read command
- * @ar: array of strings ends
+ * @av: array of strings ends
  * @ev: array is terminated by a null pointer
  * Return: nothing
  */
