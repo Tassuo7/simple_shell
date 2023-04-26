@@ -19,14 +19,14 @@ void shell_prompt(char **av, char **ev)
 		byte_read = getline(&buffer, &buffer_size, stdin);
 		if (byte_read == -1)
 		{
-			_putchar('\n');
 			exit(EXIT_FAILURE);
 		}
 		if (_strcmp(buffer, "exit\n") == 0)
 			exit_shell();
-		else if (_strcmp(buffer, "env\n") == 0)
+		if (_strcmp(buffer, "env\n") == 0)
 		{
 			get_env(ev);
+			continue;
 		}
 		buffer[byte_read - 1] = '\0';
 		av[0] = buffer;
