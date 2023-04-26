@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * shell_prompt - A function display prompt and read command
- * @ar: string input
- * @ev: string input
+ * @ar: array of strings ends
+ * @ev: array is terminated by a null pointer
  * Return: nothing
  */
 void shell_prompt(char **av, char **ev)
@@ -15,7 +15,8 @@ void shell_prompt(char **av, char **ev)
 
 	while (1)
 	{
-		_prompt("$ ");
+		if (isatty(STDIN_FILENO))
+			_prompt("$ ");
 		byte_read = getline(&buffer, &buffer_size, stdin);
 		if (byte_read == -1)
 		{
@@ -39,7 +40,9 @@ void shell_prompt(char **av, char **ev)
 		if (pid == 0)
 		{
 			if (execve(av[0], av, NULL) == -1)
-				perror(".hsh/:");
+				perror(".hsh/");
+			else
+				execve(av[0], av, NULL);
 			exit(0);
 		}
 		else
