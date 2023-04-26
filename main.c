@@ -22,12 +22,12 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		byte_read = getline(&buffer, &buffer_size, stdin);
 		(void)av;
 		if (byte_read == -1)
-		{ 
+		{
 			free(buffer);
 			break;
 		}
-		if(buffer[byte_read-1] == '\n')
-			buffer[byte_read-1] = '\0';
+		if (buffer[byte_read - 1] == '\n')
+			buffer[byte_read - 1] = '\0';
 		if (_strcmp(av[0], "exit") == 0)
 			exit_shell();
 		if (_strcmp(buffer, "env") == 0)
@@ -39,8 +39,8 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			perror("fork");
 			exit(1);
 		}
-		else if(pid == 0)
-		{ 
+		else if (pid == 0)
+		{
 			argv[0] = buffer;
 			execve(argv[0], argv, NULL);
 			free(buffer);
@@ -49,7 +49,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		}
 		else
 		{
-			if(waitpid(pid, &status, 0) == -1)
+			if (waitpid(pid, &status, 0) == -1)
 			{
 				perror("waitpid");
 				free(buffer);
