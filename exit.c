@@ -6,6 +6,5 @@
  */
 void exit_shell(int V)
 {
-	_puts("exit");
 	exit(V);
 }
