@@ -20,7 +20,6 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		(void)av;
 		if (byte_read == -1)
 		{
-			free(buffer);
 			break;
 		}
 		if(buffer[byte_read-1] == '\n')
