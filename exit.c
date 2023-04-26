@@ -4,7 +4,7 @@
  *@V : value of the normal exit
  * Return: nothing
  */
-void exit_shell(int V)
+void exit_shell()
 {
-	exit(V);
+	exit(0);
 }
