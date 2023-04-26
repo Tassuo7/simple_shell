@@ -25,7 +25,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		}
 		if (cmd[byte_read - 1] == '\n')
 			cmd[byte_read - 1] = '\0';
-		if (_strcmp(av[0], "exit") == 0)
+		if (_strcmp(cmd, "exit") == 0)
 			exit_shell();
 		if (_strcmp(cmd, "env") == 0)
 			get_env(env);
