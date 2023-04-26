@@ -2,7 +2,7 @@
 /**
  * main - shell project
  * @argc: number of arguments
- * @argv: array of arguments
+ * @av: array of arguments
  * @env: environement
  * Return: Always 0.
  */
