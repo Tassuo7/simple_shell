@@ -19,11 +19,16 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		byte_read = getline(&buffer, &buffer_size, stdin);
 		(void)av;
 		if (byte_read == -1)
-			break;
-		av[0] = buffer;
-		if (_strcmp(av[0], "exit\n") == 0)
+		{
+			free(buffer);
+			exit(0);
+		}
+		if(buffer[byte_read-1] == '\n')
+			buffer[buffer_read-1] = '\0';
+
+		if (_strcmp(av[0], "exit") == 0)
 			exit_shell();
-		if (_strcmp(buffer, "env\n") == 0)
+		if (_strcmp(buffer, "env") == 0)
 			get_env(env);
 
 	}
