@@ -21,7 +21,9 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		if (byte_read == -1)
 			break;
 		if (_strcmp(av[0], "exit\n") == 0)
-			exit_shell();
+			exit_shell(0);
+		else
+			exit_shell(1);
 		if (_strcmp(buffer, "env\n") == 0)
 			get_env(env);
 
