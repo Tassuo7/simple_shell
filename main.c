@@ -50,6 +50,6 @@ int main(int argc, char **argv, char **env)
 		else
 			wait(&status);
 	}
-	free(buffer)
+	free(buffer);
 	return (0);
 }
