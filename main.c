@@ -20,7 +20,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		(void)av;
 		if (byte_read == -1)
 		{
-			break;
+			return (-1);
 		}
 		cmd[byte_read - 1] = '\0';
 		if (_strcmp(av[0], "exit\n") == 0)
