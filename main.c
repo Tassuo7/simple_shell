@@ -20,8 +20,8 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		(void)av;
 		if (byte_read == -1)
 			break;
-		if (_strcmp(buffer, "exit") == 0)
-			exit_shell();
+		if (_strcmp(buffer, "exit\n") == 0)
+			exit(0);
 		if (_strcmp(buffer, "env\n") == 0)
 		{
 			get_env(env);
