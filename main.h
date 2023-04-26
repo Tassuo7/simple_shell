@@ -1,19 +1,21 @@
-#ifndef __MAIN_H__
-#define __MAIN_H__
-/* declaration de bibliotheque */
-#include <unistd.h>
+#ifndef MAIN_H
+#define MAIN_H
+#define _GNU_SOURCE
+
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <errno.h>
 /* declaration of prototype */
 int _putchar(char c);
 void _puts(char *str);
-char *_prompt(char *prompt_symbol);
-void execute_command(char **argv);
-void exit_shell();
-int _strcmp(char *value1, char *value2);
 int get_env(char **env);
-void shell_prompt(char **ar, char **ev);
+char *get_cmd();
+int _strcmp(char *value1, char *value2);
 void pid_fork(char *buffer);
+
 #endif

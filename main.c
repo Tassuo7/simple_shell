@@ -8,29 +8,34 @@
  */
 int main(__attribute__((unused))int argc, char **av, char **env)
 {
-	char  *cmd = NULL;
-	size_t buffer_size = 0;
-	ssize_t byte_read;
+        char *cmd, *args[64], *token;
+        const char *del;
+        int i;
 
-	while (1)
-	{
-		if (isatty(STDIN_FILENO))
-			_prompt("$ ");
-		byte_read = getline(&cmd, &buffer_size, stdin);
-		(void)av;
-		if (byte_read == -1)
-		{
-			free(cmd);
-			break;
-		}
-		if (cmd[byte_read - 1] == '\n')
-			cmd[byte_read - 1] = '\0';
-		if (_strcmp(cmd, "exit\n") == 0)
-			exit_shell();
-		if (_strcmp(cmd, "env\n") == 0)
-			get_env(env);
-		pid_fork(cmd);
-	}
-	free(cmd);
-	return (0);
+        del = "\n";
+        while (1)
+        {
+                cmd = get_cmd();
+                (void)av;
+
+                i = 0;
+                token = strtok(cmd, del);
+                while (token != NULL)
+                {
+                        args[i] = token;
+                        i++;
+                        token = strtok(NULL, del);
+                }
+                args[i] = NULL;
+                if (_strcmp(cmd, "env\n") == 0)
+                        get_env(env);
+                if (_strcmp(args[0], "exit\n") == 0)
+                        exit(0);
+                else
+                {
+                        pid_fork(cmd);
+                }
+                free(cmd);
+        }
+        return (0);
 }
