@@ -19,7 +19,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		byte_read = getline(&buffer, &buffer_size, stdin);
 		(void)av;
 		if (byte_read == -1)
-			exit_shell();
+			break;
 		if (_strcmp(av[0], "exit\n") == 0)
 			exit_shell();
 		if (_strcmp(buffer, "env\n") == 0)
