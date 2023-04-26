@@ -22,13 +22,6 @@ void shell_prompt(char **av, char **ev)
 		{
 			exit(EXIT_FAILURE);
 		}
-		if (_strcmp(buffer, "exit\n") == 0)
-			exit_shell();
-		if (_strcmp(buffer, "env\n") == 0)
-		{
-			get_env(ev);
-			continue;
-		}
 		buffer[byte_read - 1] = '\0';
 		av[0] = buffer;
 		pid = fork();
