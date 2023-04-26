@@ -24,6 +24,7 @@ void shell_prompt(char **av, char **ev)
 		}
 		buffer[byte_read - 1] = '\0';
 		av[0] = buffer;
+		(void)ev;
 		pid = fork();
 		if (pid == -1)
 		{
@@ -34,8 +35,6 @@ void shell_prompt(char **av, char **ev)
 		{
 			if (execve(av[0], av, NULL) == -1)
 				perror(".hsh/");
-			else
-				execve(av[0], av, NULL);
 			exit(0);
 		}
 		else
