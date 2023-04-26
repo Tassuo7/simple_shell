@@ -21,7 +21,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		if (byte_read == -1)
 		{
 			free(buffer);
-			exit(0);
+			break;
 		}
 		if(buffer[byte_read-1] == '\n')
 			buffer[byte_read-1] = '\0';
