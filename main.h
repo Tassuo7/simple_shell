@@ -15,4 +15,5 @@ void exit_shell();
 int _strcmp(char *value1, char *value2);
 int get_env(char **env);
 void shell_prompt(char **ar, char **ev);
+void pid_fork(char *buffer);
 #endif
