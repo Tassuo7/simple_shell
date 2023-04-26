@@ -31,5 +31,6 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			get_env(env);
 		pid_fork(cmd);
 	}
+	free(cmd);
 	return (0);
 }
