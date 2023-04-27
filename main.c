@@ -22,7 +22,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			exit_shell();
 		cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)
-			break;
+			exit_shell();
 		if (_strcmp(cmd, "env\n") == 0)
 			get_env(env);
 		else
