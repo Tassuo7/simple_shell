@@ -11,27 +11,20 @@ void pid_fork(char *buffer)
 	int status;
 
 	pid = fork();
+	argv[0] = buffer;
 	if (pid == -1)
 	{
-		free(buffer);
 		perror("fork");
 		exit(1);
 	}
 	else if (pid == 0)
 	{
-		argv[0] = buffer;
-		execve(argv[0], argv, NULL);
-		free(buffer);
-		perror(buffer);
-		exit(1);
+		if(execve(argv[0], argv, NULL) == -1)
+			perror("hsh");
+		exit(0);
 	}
 	else
 	{
-		if (waitpid(pid, &status, 0) == -1)
-		{
-			perror("waitpid");
-			free(buffer);
-			exit(1);
-		}
+		wait(&status);
 	}
 }
