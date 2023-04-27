@@ -15,12 +15,12 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			_puts("$ ");
+			_prompt("$ ");
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		(void)av;
 		if (byte_read == -1)
 		{
-			return (-1);
+			exit(0);
 		}
 		cmd[byte_read - 1] = '\0';
 		if (_strcmp(av[0], "exit\n") == 0)
