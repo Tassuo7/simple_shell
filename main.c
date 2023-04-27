@@ -19,7 +19,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			_prompt("$ ");
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
-			break;
+			exit_shell();
 		cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)
 			break;
