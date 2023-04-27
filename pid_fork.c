@@ -17,7 +17,7 @@ void pid_fork(char *buffer)
 		perror("fork");
 		exit(1);
 	}
-	if (pid == 0)
+	else if (pid == 0)
 	{
 		if (execve(argv[0], argv, NULL) == -1)
 			perror("hsh");
