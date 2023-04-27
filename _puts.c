@@ -1,15 +1,5 @@
 #include "main.h"
 /**
- * _prompt - function display prompt
- * @prompt_symbol: the symbol to be prompted
- * Return: symbol
- */
-char *_prompt(char *prompt_symbol)
-{
-	_puts(prompt_symbol);
-	return (prompt_symbol);
-}
-/**
 * _putchar - is a function used to write a character
 * @character : The charcter passed as parameter
 * Return: the character written or error when some error occurs

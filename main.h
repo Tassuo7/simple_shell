@@ -10,6 +10,7 @@
 int _putchar(char c);
 void _puts(char *str);
 char *_prompt(char *prompt_symbol);
+void exit_shell(void);
 void execute_command(char **argv);
 int _strcmp(char *value1, char *value2);
 int get_env(char **env);
