@@ -25,7 +25,8 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			break;
 		if (_strcmp(cmd, "env\n") == 0)
 			get_env(env);
-		pid_fork(cmd);
+		else
+			pid_fork(cmd);
 	}
 	free(cmd);
 	return (0);
