@@ -15,7 +15,7 @@ void pid_fork(char *buffer)
 	if (pid == -1)
 	{
 		perror("fork");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	else if (pid == 0)
 	{

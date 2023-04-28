@@ -15,12 +15,16 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 
 	while (1)
 	{
-		if (isatty(STDIN_FILENO))
+		if (isatty(0))
+		{
 			_prompt("$ ");
+			fflush(stdout);
+		}
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
 			exit_shell();
-		cmd[byte_read - 1] = '\0';
+		if (cmd[byte_read - 1] = '\n')
+			cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)
 			break;
 		if (_strcmp(cmd, "env\n") == 0)
