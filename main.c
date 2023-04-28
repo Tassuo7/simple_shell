@@ -22,8 +22,8 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		}
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
-			break;
-		if (cmd == NULL || cmd[0] == ' ' || cmd[0] == '\n')
+			exit_shell();
+		if (cmd[0] == ' ' || cmd == NULL || cmd[0] == '\n')
 			continue;
 		if (cmd[byte_read - 1] == '\n')
 			cmd[byte_read - 1] = '\0';
