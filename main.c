@@ -22,7 +22,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		}
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
-			exit_shell();
+			break;
 		if (cmd[0] == ' ' || cmd == NULL || cmd[0] == '\n')
 			continue;
 		if (cmd[byte_read - 1] == '\n')
