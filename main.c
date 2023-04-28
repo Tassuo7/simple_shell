@@ -22,12 +22,12 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		}
 		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
-			exit_shell();
-		if (cmd[byte_read - 1] == '\n')
-			cmd[byte_read - 1] = '\0';
-		if (_strcmp(cmd, "exit\n") == 0)
 			break;
-		if (_strcmp(cmd, "env\n") == 0)
+		else if (cmd[byte_read - 1] == '\n')
+			cmd[byte_read - 1] = '\0';
+		else if (_strcmp(cmd, "exit\n") == 0)
+			break;
+		else if (_strcmp(cmd, "env\n") == 0)
 			get_env(env);
 		else
 			pid_fork(cmd);
