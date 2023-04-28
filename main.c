@@ -27,7 +27,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)
 			break;
-		if (_strcmp(cmd, "env\n") == 0)
+		else if (_strcmp(cmd, "env\n") == 0)
 			get_env(env);
 		else
 			pid_fork(cmd);
