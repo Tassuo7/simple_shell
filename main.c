@@ -25,6 +25,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			break;
 		if (cmd[0] == ' ' || cmd == NULL || cmd[0] == '\n')
 			continue;
+		_boucle(av, cmd);
 		if (cmd[byte_read - 1] == '\n')
 			cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)

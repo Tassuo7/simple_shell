@@ -5,15 +5,16 @@
  * @c: string input
  * Return: nothing
  */
-void _boucle(char **ar, char *c)
+char **_boucle(char **ar, char *c)
 {
-        int index;
+	int index;
 
-        index = 0;
+	index = 0;
 	ar[index] = strtok(c, " ");
 	while (c[index])
-        {
+	{
 		ar[++index] = strtok(NULL, " ");
-        }
+	}
 	ar[index] = NULL;
+	return (ar);
 }
