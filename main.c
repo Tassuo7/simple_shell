@@ -24,6 +24,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 		if (byte_read == -1)
 			break;
 		else if (cmd == NULL || cmd[0] == ' ' || cmd[0] == '\n')
+			continue;
 		if (cmd[byte_read - 1] == '\n')
 			cmd[byte_read - 1] = '\0';
 		if (_strcmp(cmd, "exit\n") == 0)
