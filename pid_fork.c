@@ -8,8 +8,11 @@ void pid_fork(char *buffer)
 {
 	char *argv[] = {NULL, NULL};
 	pid_t pid;
-	int s;
+	int s, index = 0;
 
+	argv[index] = strtok(buffer, " ");
+	while (argv[index])
+		argv[++index] = strtok(NULL, " ");
 	pid = fork();
 	argv[0] = buffer;
 	if (pid == -1)
