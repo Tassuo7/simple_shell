@@ -1,7 +1,7 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 /* declaration de bibliotheque */
-#define MAX_L 1024
+
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>

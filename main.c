@@ -13,7 +13,6 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 	ssize_t byte_read;
 	(void)av;
 
-	cmd = malloc(sizeof(char) * MAX_L);
 	if (!cmd)
 	{
 		perror("error allocation");
