@@ -11,6 +11,7 @@
 int _putchar(char c);
 void _puts(char *str);
 char *_prompt(char *prompt_symbol);
+ssize_t my_getline(char **line, size_t *n);
 void exit_shell(void);
 void execute_command(char **argv);
 int _strcmp(char *value1, char *value2);
