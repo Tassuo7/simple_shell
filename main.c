@@ -20,7 +20,7 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 			_prompt("$ ");
 			fflush(stdout);
 		}
-		byte_read = getline(&cmd, &buffer_size);
+		byte_read = getline(&cmd, &buffer_size, stdin);
 		if (byte_read == -1)
 			break;
 		if (cmd[0] == ' ' || cmd == NULL || cmd[0] == '\n')
