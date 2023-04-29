@@ -10,6 +10,7 @@ char **_boucle(char **ar, char *c)
 	int index;
 
 	index = 0;
+
 	ar[index] = strtok(c, " ");
 	while (c[index])
 	{
