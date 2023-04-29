@@ -13,11 +13,6 @@ int main(__attribute__((unused))int argc, char **av, char **env)
 	ssize_t byte_read;
 	(void)av;
 
-	if (!cmd)
-	{
-		perror("error allocation");
-		exit(EXIT_FAILURE);
-	}
 	while (1)
 	{
 		if (isatty(0))
