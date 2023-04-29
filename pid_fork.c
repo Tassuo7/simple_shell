@@ -8,7 +8,8 @@ void pid_fork(char *buffer)
 {
 	char *argv[] = {NULL, NULL};
 	pid_t pid;
-	int status;
+	int s, ex_s;
+	(void)ex_s;
 
 	pid = fork();
 	argv[0] = buffer;
@@ -25,6 +26,11 @@ void pid_fork(char *buffer)
 	}
 	else
 	{
-		wait(&status);
+		waitpid(pid, &s, 0);
+		if (WIFEXITED(s))
+		{
+			ex_s = WEXITSTATUS(s);
+			_putchar(s);
+		}
 	}
 }
